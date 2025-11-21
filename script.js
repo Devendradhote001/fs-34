@@ -3,7 +3,8 @@ let container = document.querySelector(".container");
 
 let addBtn = document.querySelector("#add");
 
-let tasksArr = [];
+let tasksArr = JSON.parse(localStorage.getItem("items")) || [];
+console.log(tasksArr);
 
 const renderUi = () => {
   container.innerHTML = "";
@@ -11,9 +12,9 @@ const renderUi = () => {
     container.innerHTML += `
   <div class="list-conatiner">
         <p>
-        ${val}
+  ${val}
         </p>
-        <div>
+        <div class="btns">
           <button>Update</button>
           <button id="del">Delete</button>
         </div>
@@ -21,10 +22,13 @@ const renderUi = () => {
   });
 };
 
+renderUi();
+
 addBtn.addEventListener("click", (e) => {
   let inpValue = input.value;
 
   tasksArr.push(inpValue);
+  localStorage.setItem("items", JSON.stringify(tasksArr));
   renderUi();
 
   input.value = "";

@@ -22,6 +22,11 @@ main {
   align-items: center;
 }
 
+.container{
+
+  width: 50%;
+}
+
 .inp-container {
   padding: 10px;
   margin-bottom: 20px;
@@ -47,13 +52,14 @@ main {
 
 .list-conatiner {
   display: flex;
+
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
   border: 1px solid gray;
   border-radius: 10px;
   background-color: white;
-  width: 60%;
+  width: 100%;
 }
 
 .list-conatiner button {
@@ -64,6 +70,11 @@ main {
   font-size: 20px;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.btns{
+  display: flex;
+  gap: 20px;
 }
 
 #del{
